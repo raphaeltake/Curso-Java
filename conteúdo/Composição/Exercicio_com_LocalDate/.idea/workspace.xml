@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1033bfba-ca80-4000-a198-250a4bc49dcf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Exercicio/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exercicio/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exercicio/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exercicio/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exercicio/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exercicio/Exercicio.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exercicio/src/application/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exercicio/src/entities/Department.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exercicio/src/entities/HourContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exercicio/src/entities/Worker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exercicio/src/entities/enums/WorkerLevel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EnumeracaoExercicio.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Department.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/HourContract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Worker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/enums/WorkerLevel.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="31QnyO0UzfauSqIAEblRaWBHajI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/rapha/OneDrive/git/Curso-Java/conteúdo/Composição/Exercicio_com_LocalDate",
+    "onboarding.tips.debug.path": "C:/Users/rapha/OneDrive/Programas/Udemy/Java/EnumeracaoExercicio/src/Main.java"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1033bfba-ca80-4000-a198-250a4bc49dcf" name="Changes" comment="" />
+      <created>1755465418772</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755465418772</updated>
+    </task>
+    <servers />
+  </component>
+</project>
