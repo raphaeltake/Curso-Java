@@ -1,4 +1,4 @@
-import exercicio1.model.entities.Log;
+import Set_exercicio1.model.entities.Log;
 
 void main() {
 

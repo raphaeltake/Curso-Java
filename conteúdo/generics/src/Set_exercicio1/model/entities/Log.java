@@ -1,8 +1,6 @@
-package exercicio1.model.entities;
+package Set_exercicio1.model.entities;
 
 import java.time.Instant;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.Objects;
 
 public class Log {
