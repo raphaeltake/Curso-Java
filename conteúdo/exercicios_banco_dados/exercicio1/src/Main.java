@@ -1,6 +1,7 @@
 import db.DB;
 import db.DbExcepetion;
 import model.exceptions.domainException;
+import model.util.ColumnType;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +11,6 @@ import java.sql.Statement;
 void main() {
 
     Connection conn = null;
-
 
     try{
         conn = DB.getConnection();
@@ -26,6 +26,10 @@ void main() {
     }
 }
 
+//Cria a tabela dos autores
+//TODO: Passar a função para o MySql.java
+//TODO: Tornar ela reutilizável
+//TODO: Pegar os nomes dos arquivos sozinho
 static void create_autores_db(String path, Connection conn) {
     Statement ps = null;
 
@@ -37,6 +41,8 @@ static void create_autores_db(String path, Connection conn) {
         String[] lineData = br.readLine().split(";");
         String[] largerData = lineData;
 
+        //Procura a linha com dados mais completa (o arquivo pode conter linhas sem todos os dados, pode causar
+        //problemas quando for identificar o tipo da coluna
         while ((line = br.readLine()) != null){
             lineData = line.split(";");
 
@@ -46,10 +52,10 @@ static void create_autores_db(String path, Connection conn) {
 
         }
 
-        Map<String, String> columnsType = columnType(columnFields, largerData);
+        Map<String, String> columnsType = ColumnType.findType(columnFields, largerData);
 
         String fields = "";
-        boolean firstTime = true;
+        boolean firstTime = true; //Para identificar as primary keys
 
         for (String key : columnsType.keySet()){
             String field = String.format("%s %s", key, columnsType.get(key));
@@ -60,8 +66,7 @@ static void create_autores_db(String path, Connection conn) {
             field += ", ";
             fields += field;
         }
-        fields = "CREATE TABLE autores_ex1 (" + fields.substring(0, fields.length() - 2) + ");";
-        System.out.println(fields);
+        fields = "CREATE TABLE IF NOT EXISTS autores_ex1 (" + fields.substring(0, fields.length() - 2) + ");";
 
         ps.executeUpdate(fields);
 
@@ -77,21 +82,3 @@ static void create_autores_db(String path, Connection conn) {
     }
 }
 
-static Map<String, String> columnType(String[] fields, String[] data){
-    Map<String, String> columns = new LinkedHashMap<>();
-    int i = 0;
-
-    for (String field : fields){
-        try{
-            Integer.parseInt(data[i]);
-            columns.put(field, "INTEGER");
-        } catch (NumberFormatException e){
-            columns.put(field, "TEXT");
-        } catch (Exception e2){
-            throw new domainException("Erro inesperado! " + e2.getMessage());
-        }
-        i++;
-    }
-
-    return columns;
-}
