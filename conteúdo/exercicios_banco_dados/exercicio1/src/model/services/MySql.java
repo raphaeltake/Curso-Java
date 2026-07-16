@@ -100,13 +100,22 @@ public class MySql implements DataControll {
         try(BufferedReader br = new BufferedReader(new FileReader(path))){
             conn.setAutoCommit(false);
             String line = br.readLine();
-            String[] header = line.split(";");
-            int quantityDataExpected = header.length;
+            String columnsNames = String.join(", ", line.split(";"));
+            int quantityDataExpected = line.split(";").length;
             String[] fields;
-            List<List<Object>> data = new ArrayList<>();
             line = br.readLine();
 
-            //TODO: Trocar: fazer a inserção dos dados a cada leitura (Todas as linhas do arquivo estão ficando salvas em uma lista)
+            String placeholders = String.join(", ", Collections.nCopies(quantityDataExpected, "?"));
+
+            String sql = "INSERT INTO " +
+                    archiveName +
+                    String.format(" (%s)", columnsNames) +
+                    " VALUES (" +
+                    placeholders +
+                    ")";
+
+            ps = conn.prepareStatement(sql);
+
             while(line != null){
                 fields = line.split(";", -1);
                 List<Object> row = new ArrayList<>(
@@ -114,40 +123,18 @@ public class MySql implements DataControll {
                                 .map(DataType::findDataType)
                                 .toList()
                 );
-                while (row.size() < quantityDataExpected){
-                    row.add(null);
-                }
 
-                data.add(row);
-                line = br.readLine();
-            }
-
-            String columnsNames = "";
-            for (String st : header){
-                columnsNames += st + ", ";
-            }
-
-            System.out.println(columnsNames);
-            String placeholders = String.join(", ", Collections.nCopies(quantityDataExpected, "?"));
-
-            String sql = "INSERT INTO " +
-                    archiveName +
-                    String.format(" (%s)", columnsNames.substring(0, columnsNames.lastIndexOf(","))) +
-                    " VALUES (" +
-                    placeholders +
-                    ")";
-
-            ps = conn.prepareStatement(sql);
-
-            for (List<Object> dataInsert : data){
                 for (int i = 0; i < quantityDataExpected; i++) {
-                    Object value = dataInsert.get(i);
+                    Object value = row.get(i);
                     if (value instanceof String && ((String) value).isEmpty()) {
                         value = null;
                     }
                     ps.setObject(i + 1, value);
                 }
+
                 ps.executeUpdate();
+
+                line = br.readLine();
             }
 
         }
@@ -164,7 +151,6 @@ public class MySql implements DataControll {
         finally {
             DB.closeStatement(ps);
         }
-
     }
 
 //    void createAutores(List<?> data) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
