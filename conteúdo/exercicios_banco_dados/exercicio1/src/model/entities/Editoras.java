@@ -1,15 +1,15 @@
 package model.entities;
 
-public class editoras {
+public class Editoras {
     private Integer id_editora;
     private String nome;
     private String cidade_sede;
     private Integer ano_fundacao;
 
-    public editoras() {
+    public Editoras() {
     }
 
-    public editoras(Integer id_editora, String nome, String cidade_sede, Integer ano_fundacao) {
+    public Editoras(Integer id_editora, String nome, String cidade_sede, Integer ano_fundacao) {
         this.id_editora = id_editora;
         this.nome = nome;
         this.cidade_sede = cidade_sede;

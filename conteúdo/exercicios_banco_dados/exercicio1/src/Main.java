@@ -19,11 +19,12 @@ void main() {
         String path = "exercicio1/data";
         File directory = new File(path);
         File[] files = directory.listFiles(File::isFile);
-        assert files != null : "Nenhum arquivo encontrado";
 
         MySql mySql = new MySql();
+        assert files != null;
         for (File file : files){
             mySql.createDataBase(file.getPath(), conn);
+            mySql.insertArchiveData(file.getPath(), conn);
         }
 
         System.out.println("Feito");
@@ -31,7 +32,7 @@ void main() {
 
     } catch (NullPointerException e) {
         throw new domainException("Pasta não encontrada! " + e.getMessage());
-    }  catch (Exception e) {
+    } catch (Exception e) {
         throw new domainException(e.getMessage());
     } finally {
         DB.closeConnection();

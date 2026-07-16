@@ -1,6 +1,6 @@
 package model.entities;
 
-public class livros {
+public class Livros {
     private Integer id_livro;
     private String titulo;
     private Integer ano_publicacao;
@@ -8,10 +8,10 @@ public class livros {
     private Integer id_editora;
     private Integer id_genero;
 
-    public livros() {
+    public Livros() {
     }
 
-    public livros(Integer id_livro, String titulo, Integer ano_publicacao, Integer id_autor, Integer id_editora, Integer id_genero) {
+    public Livros(Integer id_livro, String titulo, Integer ano_publicacao, Integer id_autor, Integer id_editora, Integer id_genero) {
         this.id_livro = id_livro;
         this.titulo = titulo;
         this.ano_publicacao = ano_publicacao;

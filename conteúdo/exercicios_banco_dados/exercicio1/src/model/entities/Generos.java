@@ -1,13 +1,13 @@
 package model.entities;
 
-public class generos {
+public class Generos {
     private Integer id_genero;
     private String descricao;
 
-    public generos() {
+    public Generos() {
     }
 
-    public generos(Integer id_genero, String descricao) {
+    public Generos(Integer id_genero, String descricao) {
         this.id_genero = id_genero;
         this.descricao = descricao;
     }

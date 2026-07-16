@@ -1,6 +1,6 @@
 package model.entities;
 
-public class autores {
+public class Autores {
     private Integer id_autor;
     private String nome;
     private String nomeregistro;
@@ -11,10 +11,10 @@ public class autores {
     private String cidade_falecimento;
     private String estado_falecimento;
 
-    public autores() {
+    public Autores() {
     }
 
-    public autores(Integer id_autor, String nome, String nomeregistro, int ano_nascimento, String cidade_nascimento, String estado_nascimento, int ano_falecimento, String cidade_falecimento, String estado_falecimento) {
+    public Autores(Integer id_autor, String nome, String nomeregistro, Integer ano_nascimento, String cidade_nascimento, String estado_nascimento, Integer ano_falecimento, String cidade_falecimento, String estado_falecimento) {
         this.id_autor = id_autor;
         this.nome = nome;
         this.nomeregistro = nomeregistro;
